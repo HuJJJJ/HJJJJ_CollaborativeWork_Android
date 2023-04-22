@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <!--顶部标题栏-->
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+        <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimary">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="协同工作"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"/>
+        </androidx.appcompat.widget.Toolbar>
+    </FrameLayout>
+
+    <!--中间内容部分-->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+        <!--连接按钮居中-->
+        <LinearLayout android:gravity="center"
+                      android:layout_width="match_parent"
+                      android:layout_height="330dp">
+            <Button
+                    android:id="@+id/btn_Conn"
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="未连接"
+                    android:textColor="@color/grey"
+                    android:textSize="24dp"
+                    android:background="@drawable/btn_circular"/>
+        </LinearLayout>
+
+        <!--基础信息-->
+        <androidx.cardview.widget.CardView
+                android:id="@+id/card"
+                android:layout_width="match_parent"
+                android:layout_height="87dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="#ffffff"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="5dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="false">
+            <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <!--上card标题-->
+                <TableRow android:layout_weight="5">
+                    <!--客户端Id标题-->
+                    <TextView android:layout_weight="1"
+                              android:id="@+id/clientNo_title"
+                              android:layout_width="0dp"
+                              android:layout_height="match_parent"
+                              android:text="@string/card_text"
+                              android:gravity="center"
+                              android:textStyle="bold"
+                              android:textColor="@color/light_blue"
+                              android:textSize="20sp"/>
+                    <!--设备Id标题-->
+                    <TextView android:layout_weight="1"
+                              android:id="@+id/deviceNo_title"
+                              android:layout_width="0dp"
+                              android:layout_height="match_parent"
+                              android:gravity="center"
+                              android:textStyle="bold"
+                              android:text="@string/card_text2"
+                              android:textColor="@color/light_blue"
+                              android:textSize="20sp"/>
+                </TableRow>
+                <!--上card内容-->
+                <TableRow android:layout_weight="5">
+                    <!--客户端Id-->
+                    <TextView android:layout_weight="1"
+                              android:id="@+id/clientNo_content"
+                              android:layout_width="0dp"
+                              android:layout_height="match_parent"
+                              android:gravity="center_horizontal"
+                              android:textIsSelectable="true"
+                              android:textColor="@color/grey"
+                              android:textSize="14sp"/>
+                    <!--设备Id-->
+                    <TextView android:layout_weight="1"
+                              android:id="@+id/deviceNo_content"
+                              android:layout_width="0dp"
+                              android:layout_height="match_parent"
+                              android:gravity="center_horizontal"
+                              android:textIsSelectable="true"
+                              android:textColor="@color/grey"
+                              android:textSize="14sp"/>
+                </TableRow>
+            </TableLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!--下Card-->
+        <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="30dp"
+                app:cardBackgroundColor="#ffffff"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="5dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="false">
+
+            <TableLayout android:layout_width="match_parent"
+                         android:layout_height="match_parent">
+                <!--设备选择列表-->
+                <TableRow android:id="@+id/tbrow" android:layout_weight="1">
+                    <LinearLayout android:layout_marginLeft="15dp"
+                                  android:layout_marginTop="15dp"
+                                  android:layout_height="match_parent"
+                                  android:layout_width="match_parent"
+                    >
+                        <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/list"/>
+                        <TextView android:id="@+id/deviceList_title"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="match_parent"
+                                  android:gravity="left"
+                                  android:textIsSelectable="true"
+                                  android:text="连接设备选择"
+                                  android:textStyle="bold"
+                                  android:textColor="@color/light_blue"
+                                  android:textSize="14sp"/>
+
+
+                    </LinearLayout>
+                    <TextView android:id="@+id/deviceList_content"
+                              android:layout_marginTop="15dp"
+                              android:layout_marginRight="15dp"
+                              android:layout_weight="1"
+                              android:layout_width="0dp"
+                              android:layout_height="match_parent"
+                              android:gravity="right"
+                              android:textIsSelectable="true"
+                              android:textStyle="bold"
+                              android:text="auto_auto"
+                              android:textColor="@color/grey"
+                              android:textSize="14sp"/>
+
+                </TableRow>
+
+                <!--设备选择列表-->
+                <TableRow android:layout_weight="1">
+                    <LinearLayout android:layout_marginLeft="15dp"
+                                  android:layout_marginTop="15dp">
+                        <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/list"/>
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:gravity="left"
+                                android:textIsSelectable="true"
+                                android:text="服务器连接状态"
+                                android:textStyle="bold"
+                                android:textColor="@color/light_blue"
+                                android:textSize="14sp"/>
+                    </LinearLayout>
+                    <TextView
+                            android:id="@+id/serverConnectState"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:gravity="right"
+                            android:textIsSelectable="true"
+                            android:textStyle="bold"
+                            android:text="未连接"
+                            android:textColor="@color/color_red"
+                            android:textSize="14sp"/>
+                </TableRow>
+
+                <TableRow android:layout_weight="1">
+                    <LinearLayout android:layout_marginLeft="15dp"
+                                  android:layout_marginTop="15dp">
+                        <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/list"/>
+                        <TextView android:id="@+id/deviceList_Title"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="match_parent"
+                                  android:gravity="left"
+                                  android:textIsSelectable="true"
+                                  android:text="客户端连接状态"
+                                  android:textStyle="bold"
+                                  android:textColor="@color/light_blue"
+                                  android:textSize="14sp"/>
+                    </LinearLayout>
+                    <TextView
+                            android:id="@+id/clientConnectState"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:gravity="right"
+                            android:textIsSelectable="true"
+                            android:textStyle="bold"
+                            android:text="未连接"
+                            android:textColor="@color/color_red"
+                            android:textSize="14sp"/>
+                </TableRow>
+            </TableLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</LinearLayout>
